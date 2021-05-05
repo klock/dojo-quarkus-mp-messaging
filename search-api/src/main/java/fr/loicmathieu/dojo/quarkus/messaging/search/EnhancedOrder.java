@@ -7,4 +7,16 @@ public class EnhancedOrder {
     public String shippingAddress;
     public String userFirstName;
     public String userLastName;
+
+    @Override
+    public String toString() {
+        return "EnhancedOrder : {" +
+                "userId: " + userId + ", " +
+                "userFirstName: " + userFirstName + ", " +
+                "userLastName: " + userLastName + ", " +
+                "shippingAddress: " + shippingAddress + ", " +
+                "nbItem: " + nbItem + ", " +
+                "totalPrice: " + totalPrice + ", " +
+                "}";
+    }
 }

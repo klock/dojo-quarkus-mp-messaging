@@ -74,5 +74,5 @@ After creating a new order via the order API, you should have this order enhance
 You can test the search endpoint via:
 
 ```
-curl http://localhost:8081
+curl http://localhost:8088
 ```
