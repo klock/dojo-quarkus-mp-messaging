@@ -5,6 +5,7 @@ import io.quarkus.test.junit.QuarkusTest;
 import io.smallrye.reactive.messaging.connectors.InMemoryConnector;
 import io.smallrye.reactive.messaging.connectors.InMemorySink;
 import io.smallrye.reactive.messaging.connectors.InMemorySource;
+import org.eclipse.microprofile.reactive.messaging.Message;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -33,5 +34,9 @@ class MessageManagerTest {
 
         // Check you have receives the expected messages
         Assertions.assertEquals(1, results.received().size());
+
+        Message<EnhancedOrder> message = results.received().get(0);
+        EnhancedOrder payload = message.getPayload();
+        Assertions.assertEquals(payload.userId, "user1");
     }
 }
